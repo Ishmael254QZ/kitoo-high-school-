@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Library - Kitoo High School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/library.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Kitoo High School</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#academics">Academics</a></li>
+                <li><a href="library.html" class="active">Library</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Portals <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="student-portal.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                        <li><a href="teacher-portal.html">Teacher Portal</a></li>
+                        <li><a href="admin-portal.html">Admin Portal</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Library Hero Section -->
+    <section class="library-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">School Library</h1>
+            <p class="hero-subtitle">Your Gateway to Knowledge and Learning</p>
+        </div>
+    </section>
+
+    <!-- Library Introduction -->
+    <section class="section">
+        <div class="container">
+            <div class="library-intro">
+                <div class="intro-content">
+                    <h2>Welcome to Our Library</h2>
+                    <p>
+                        A school library is an essential learning resource center designed to support students and teachers by providing access to books, information, and study materials. It promotes reading, research skills, and academic growth in a quiet, organized environment.
+                    </p>
+                    <p>
+                        Our library is equipped with a comprehensive collection of books, digital resources, and modern facilities to enhance your learning experience. Whether you're looking for reference materials, fiction books, or academic resources, our library is here to serve you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How the Library Works -->
+    <section class="section library-how">
+        <div class="container">
+            <div class="section-header">
+                <h2>How the School Library Works</h2>
+                <p>Everything you need to know about using our library</p>
+            </div>
+
+            <!-- Registration -->
+            <div class="library-section">
+                <div class="section-number">1</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-id-card"></i> Registration</h3>
+                    <p>
+                        Students are registered in the library system using either a library card or their student ID. This allows them to borrow books and access library services. Registration is done automatically when you enroll in the school.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Searching for Books -->
+            <div class="library-section">
+                <div class="section-number">2</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-search"></i> Searching for Books</h3>
+                    <p>
+                        Students can find books through:
+                    </p>
+                    <ul>
+                        <li>Browsing the shelves arranged by subjects or categories</li>
+                        <li>Using the library's digital catalog to search by:
+                            <ul>
+                                <li>Title</li>
+                                <li>Author</li>
+                                <li>Subject</li>
+                                <li>Keywords</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Book Organization:</strong></p>
+                    <ul>
+                        <li>Dewey Decimal Classification (DDC)</li>
+                        <li>Separate Fiction and Non-Fiction sections</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Borrowing Books -->
+            <div class="library-section">
+                <div class="section-number">3</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-book-open"></i> Borrowing Books</h3>
+                    <p>To borrow a book:</p>
+                    <ol>
+                        <li>Present the book and your library ID at the circulation desk</li>
+                        <li>The librarian records the book in the system</li>
+                        <li>You receive a due date for returning the book</li>
+                    </ol>
+                    <p><strong>Borrowing Rules:</strong></p>
+                    <ul>
+                        <li>Limited number of books per student</li>
+                        <li>1–2 week borrowing period</li>
+                        <li>Renewals allowed if the book is not reserved</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Returning Books -->
+            <div class="library-section">
+                <div class="section-number">4</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-undo-alt"></i> Returning Books</h3>
+                    <p>
+                        Books must be returned on or before the due date. Returns can be made at:
+                    </p>
+                    <ul>
+                        <li>Circulation desk</li>
+                        <li>Library drop box</li>
+                    </ul>
+                    <p><strong>Late returns may result in:</strong></p>
+                    <ul>
+                        <li>Fines</li>
+                        <li>Temporary suspension from borrowing</li>
+                        <li>Reminders sent to the student</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Library Facilities -->
+            <div class="library-section">
+                <div class="section-number">5</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-building"></i> Library Facilities</h3>
+                    <p>
+                        The library provides several spaces and resources:
+                    </p>
+                    <div class="facilities-grid">
+                        <div class="facility-card">
+                            <i class="fas fa-book-reader"></i>
+                            <h4>Quiet Reading Area</h4>
+                        </div>
+                        <div class="facility-card">
+                            <i class="fas fa-table"></i>
+                            <h4>Study Tables</h4>
+                        </div>
+                        <div class="facility-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Group Discussion Zones</h4>
+                        </div>
+                        <div class="facility-card">
+                            <i class="fas fa-laptop"></i>
+                            <h4>Computer/Resource Area</h4>
+                        </div>
+                        <div class="facility-card">
+                            <i class="fas fa-book"></i>
+                            <h4>Reference Section</h4>
+                        </div>
+                    </div>
+                    <p><strong>Common Uses:</strong></p>
+                    <ul>
+                        <li>Revision</li>
+                        <li>Research</li>
+                        <li>Completing assignments</li>
+                        <li>Accessing academic materials</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reference Services -->
+            <div class="library-section">
+                <div class="section-number">6</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-question-circle"></i> Reference Services</h3>
+                    <p>
+                        Librarians assist users with:
+                    </p>
+                    <ul>
+                        <li>Finding information</li>
+                        <li>Locating materials</li>
+                        <li>Using reference books (dictionaries, atlases, encyclopedias)</li>
+                        <li>Learning research and citation skills</li>
+                    </ul>
+                    <p class="note">
+                        <i class="fas fa-info-circle"></i> Reference books must be used inside the library only.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Library Rules -->
+            <div class="library-section">
+                <div class="section-number">7</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-clipboard-list"></i> Library Rules</h3>
+                    <p>
+                        To maintain order and protect resources, students must follow these rules:
+                    </p>
+                    <div class="rules-grid">
+                        <div class="rule-item">
+                            <i class="fas fa-volume-mute"></i>
+                            <span>Maintain silence</span>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-hand-paper"></i>
+                            <span>Handle books carefully</span>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-ban"></i>
+                            <span>No eating or drinking</span>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-pen-fancy"></i>
+                            <span>No writing in books</span>
+                        </div>
+                        <div class="rule-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Return books on time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Services -->
+            <div class="library-section">
+                <div class="section-number">8</div>
+                <div class="section-content">
+                    <h3><i class="fas fa-digital-tachograph"></i> Digital Services</h3>
+                    <p>
+                        Modern school libraries may offer:
+                    </p>
+                    <div class="digital-services-grid">
+                        <div class="service-card">
+                            <i class="fas fa-tablet-alt"></i>
+                            <h4>E-books</h4>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-newspaper"></i>
+                            <h4>Online Journals</h4>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-search"></i>
+                            <h4>Digital Catalog Search</h4>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-wifi"></i>
+                            <h4>Wi-Fi</h4>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-database"></i>
+                            <h4>Educational Databases</h4>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Learning Platforms</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Library Hours -->
+    <section class="section library-hours">
+        <div class="container">
+            <div class="hours-card">
+                <h2><i class="fas fa-clock"></i> Library Hours</h2>
+                <div class="hours-list">
+                    <div class="hours-item">
+                        <span class="day">Monday - Friday</span>
+                        <span class="time">7:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Saturday</span>
+                        <span class="time">9:00 AM - 2:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span class="day">Sunday</span>
+                        <span class="time">Closed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kitoo High School</h3>
+                    <p>Excellence in Education Since 1985</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#academics">Academics</a></li>
+                        <li><a href="library.html">Library</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Portals</h4>
+                    <ul>
+                        <li><a href="student-portal.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                        <li><a href="teacher-portal.html">Teacher Portal</a></li>
+                        <li><a href="admin-portal.html">Admin Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="library.html">Library</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kitoo High School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+

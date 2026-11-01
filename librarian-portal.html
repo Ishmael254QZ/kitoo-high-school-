@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarian Portal - Kitoo High School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="css/admin.css"> <!-- Reusing admin styles for layout -->
+    <link rel="stylesheet" href="css/widgets.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="portal-body">
+
+    <nav class="portal-nav">
+        <div class="container">
+            <div class="portal-brand">
+                <i class="fas fa-book-reader"></i>
+                <span>Kitoo High School - Librarian Portal</span>
+            </div>
+            <ul class="portal-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li>
+                    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Section (Reused logic) -->
+    <div id="loginSection" class="login-section">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <i class="fas fa-book"></i>
+                    <h2>Librarian Login</h2>
+                    <p>Staff access only</p>
+                </div>
+                <!-- Logic handled by portal.js/handleLogin but we might need to adjust for 'librarian' type -->
+                <form id="librarianLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="librarianUsername">Username</label>
+                        <input type="text" id="librarianUsername" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="librarianPassword">Password</label>
+                        <input type="password" id="librarianPassword" name="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboardSection" class="dashboard-section" style="display: none;">
+        <div class="container">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h1>Librarian Dashboard</h1>
+                    <p>Manage library resources and issues</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <h3>5,000</h3>
+                            <p>Total Books</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <div>
+                            <h3>120</h3>
+                            <p>Issued Books</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div>
+                            <h3>15</h3>
+                            <p>Overdue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Library Actions</h2>
+                <div class="actions-grid">
+                    <a href="#" class="action-card" onclick="showIssueBookModal()">
+                        <i class="fas fa-book-open"></i>
+                        <span>Issue Book</span>
+                    </a>
+                    <a href="#" class="action-card" onclick="showReturnBookModal()">
+                        <i class="fas fa-undo"></i>
+                        <span>Return Book</span>
+                    </a>
+                    <a href="#" class="action-card" onclick="showReportCaseModal()">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Report Case</span>
+                    </a>
+                    <a href="#" class="action-card">
+                        <i class="fas fa-list"></i>
+                        <span>Inventory</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Modals -->
+
+            <!-- Issue Book Modal -->
+            <div id="issueBookModal" class="staff-management-modal" style="display: none;">
+                <div class="staff-management-content">
+                    <div class="staff-management-header">
+                        <h2><i class="fas fa-book-reader"></i> Issue Book</h2>
+                        <button class="modal-close" onclick="closeIssueBookModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="staff-management-body">
+                        <form id="issueBookForm" class="staff-form">
+                            <div class="form-group">
+                                <label for="issueStudentId">Student Admission Number</label>
+                                <input type="text" id="issueStudentId" required placeholder="e.g. KHS/2024/001">
+                            </div>
+                            <div class="form-group">
+                                <label for="issueBookId">Book ID / ISBN</label>
+                                <input type="text" id="issueBookId" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="issueDueDate">Due Date</label>
+                                <input type="date" id="issueDueDate">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Issue Book</button>
+                                <button type="button" class="btn btn-secondary"
+                                    onclick="closeIssueBookModal()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report Case Modal -->
+            <div id="reportCaseModal" class="staff-management-modal" style="display: none;">
+                <div class="staff-management-content">
+                    <div class="staff-management-header">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Report Case to Admin</h2>
+                        <button class="modal-close" onclick="closeReportCaseModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="staff-management-body">
+                        <form id="reportCaseForm" class="staff-form">
+                            <div class="form-group">
+                                <label for="reportTitle">Case Title</label>
+                                <input type="text" id="reportTitle" required placeholder="e.g. Damaged Book">
+                            </div>
+                            <div class="form-group">
+                                <label for="reportStudentId">Student ID (Optional)</label>
+                                <input type="text" id="reportStudentId" placeholder="e.g. KHS/2024/001">
+                            </div>
+                            <div class="form-group">
+                                <label for="reportDetails">Details</label>
+                                <textarea id="reportDetails" rows="4" required></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-danger">Submit Report</button>
+                                <button type="button" class="btn btn-secondary"
+                                    onclick="closeReportCaseModal()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/security.js"></script>
+    <script src="js/portal.js"></script>
+    <script src="js/librarian.js"></script> <!-- New Script -->
+    <script src="js/dark-mode.js"></script>
+    <script src="js/widgets.js"></script>
+    <script>
+        // Custom login handler specifically for this page if needed
+        // reusing portal.js logic but mapping librarian login form
+        document.getElementById('librarianLoginForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleLogin('librarian', {
+                username: document.getElementById('librarianUsername').value,
+                password: document.getElementById('librarianPassword').value
+            });
+        });
+    </script>
+</body>
+
+</html>

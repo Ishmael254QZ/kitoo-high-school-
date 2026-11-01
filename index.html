@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitoo High School - Excellence in Education</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/kcse.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Kitoo High School</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#admission">Admission</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="portal-menu">
+                        Portals <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="portal-menu">
+                        <li><a href="student-portal.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                        <li><a href="teacher-portal.html">Teacher Portal</a></li>
+                        <li><a href="admin-portal.html">Admin Portal</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to <span>Kitoo</span> High School</h1>
+            <p class="hero-subtitle">Excellence in Education Since 2013</p>
+            <div class="hero-buttons">
+                <a href="#admission" class="btn btn-primary">Apply Now</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Our School</h2>
+                <p>Empowering students for a bright future</p>
+            </div>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="icon-box">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be a center of academic excellence that nurtures holistic development and produces responsible citizens who contribute positively to society.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-box">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To provide quality education through innovative teaching methods, modern facilities, and a supportive environment that enables students to achieve their full potential.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-box">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Integrity, Excellence, Discipline, Innovation, and Respect - the core values that guide our daily interactions and educational practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Modules Overview -->
+    <section class="section modules">
+        <div class="container">
+            <div class="section-header">
+                <h2>School Management System</h2>
+                <p>Comprehensive digital solutions for modern education</p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card" data-module="admission">
+                    <div class="module-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Admission Module</h3>
+                    <p>Online application system with document upload and automated admission number generation.</p>
+                </div>
+                <div class="module-card" data-module="registration">
+                    <div class="module-icon">
+                        <i class="fas fa-address-card"></i>
+                    </div>
+                    <h3>Student Registration</h3>
+                    <p>Complete student profile management, class assignment, and guardian contact records.</p>
+                </div>
+                <div class="module-card" data-module="staff">
+                    <div class="module-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Staff Management</h3>
+                    <p>Teacher and non-teaching staff records, payroll, attendance tracking, and role assignment.</p>
+                </div>
+                <div class="module-card" data-module="library">
+                    <div class="module-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Library Management</h3>
+                    <p>Digital catalog, book issuance, return tracking, and automated overdue reminders.</p>
+                </div>
+                <div class="module-card" data-module="academics">
+                    <div class="module-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academics Module</h3>
+                    <p>Timetable generation, subject management, teacher allocation, and lesson attendance.</p>
+                </div>
+                <div class="module-card" data-module="exams">
+                    <div class="module-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Exam & Results</h3>
+                    <p>Automated grading, performance analytics, report generation, and KCSE grading scale integration.</p>
+                </div>
+                <div class="module-card" data-module="fees">
+                    <div class="module-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Fees & Finance</h3>
+                    <p>Payment tracking, receipt generation, M-Pesa integration, bursary management, and SMS reminders.</p>
+                </div>
+                <div class="module-card" data-module="hostel">
+                    <div class="module-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Hostel/Boarding</h3>
+                    <p>Dormitory assignment, attendance tracking, house master reports, and inventory management.</p>
+                </div>
+                <div class="module-card" data-module="inventory">
+                    <div class="module-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Inventory Management</h3>
+                    <p>Asset tracking, textbook inventory, stationery distribution, and maintenance reports.</p>
+                </div>
+                <div class="module-card" data-module="communication">
+                    <div class="module-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Communication</h3>
+                    <p>SMS/Email alerts, notices to parents, announcements, and circular distribution.</p>
+                </div>
+                <div class="module-card" data-module="discipline">
+                    <div class="module-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Discipline Module</h3>
+                    <p>Misconduct tracking, prefect reports, punishment records, and suspension management.</p>
+                </div>
+                <div class="module-card" data-module="portals">
+                    <div class="module-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Student & Parent Portals</h3>
+                    <p>Personalized dashboards for students and parents to access information and communicate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section id="admission" class="section admission">
+        <div class="container">
+            <div class="section-header">
+                <h2>Admission Process</h2>
+                <p>Join our community of learners</p>
+            </div>
+            <div class="admission-content">
+                <div class="admission-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Apply Online</h3>
+                            <p>Fill out the admission form and upload required documents (birth certificate, KCPE results, passport photo).</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Review Process</h3>
+                            <p>School administration reviews your application and supporting documents.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Admission Approval</h3>
+                            <p>If approved, you'll receive an admission number and be moved to the registration module.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Registration</h3>
+                            <p>Complete student registration with class assignment and full profile setup.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="admission-form-container">
+                    <div class="form-card">
+                        <h3>Start Your Application</h3>
+                        <form id="admissionForm" class="admission-form">
+                            <div class="form-group">
+                                <label for="studentName">Student Full Name</label>
+                                <input type="text" id="studentName" name="studentName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kcpeIndex">KCPE Index Number</label>
+                                <input type="text" id="kcpeIndex" name="kcpeIndex" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="kcpeMarks">KCPE Marks</label>
+                                <input type="number" id="kcpeMarks" name="kcpeMarks" min="0" max="500" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="parentName">Parent/Guardian Name</label>
+                                <input type="text" id="parentName" name="parentName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="parentEmail">Parent Email</label>
+                                <input type="email" id="parentEmail" name="parentEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="parentPhone">Parent Phone</label>
+                                <input type="tel" id="parentPhone" name="parentPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="birthCertificate">Upload Birth Certificate <span class="required">*</span></label>
+                                <input type="file" id="birthCertificate" name="birthCertificate" accept=".pdf,.jpg,.jpeg,.png" required>
+                                <small>Accepted formats: PDF, JPG, PNG</small>
+                                <div id="birthCertPreview" class="file-preview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="kcpeResults">Upload KCPE Results <span class="required">*</span></label>
+                                <input type="file" id="kcpeResults" name="kcpeResults" accept=".pdf,.jpg,.jpeg,.png" required>
+                                <small>Accepted formats: PDF, JPG, PNG</small>
+                                <div id="kcpeResultsPreview" class="file-preview"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="passportPhoto">Upload Passport Photo <span class="required">*</span></label>
+                                <input type="file" id="passportPhoto" name="passportPhoto" accept=".jpg,.jpeg,.png" required>
+                                <small>Accepted formats: JPG, PNG (Max 2MB)</small>
+                                <div id="passportPhotoPreview" class="file-preview"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="academics" class="section academics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Academic Excellence</h2>
+                <p>Comprehensive curriculum and modern teaching methods</p>
+            </div>
+            <div class="academics-content">
+                <div class="academics-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h3>Curriculum</h3>
+                    <p>Following the Kenyan National Curriculum with emphasis on STEM subjects, languages, and humanities.</p>
+                </div>
+                <div class="academics-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Class Structure</h3>
+                    <p>Form 1 to Form 4 with multiple streams (North, South, East, West) for better student-teacher ratio.</p>
+                </div>
+                <div class="academics-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Modern Facilities</h3>
+                    <p>State-of-the-art computer labs, science laboratories, library, and multimedia classrooms.</p>
+                </div>
+                <div class="academics-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Tracking</h3>
+                    <p>Regular assessments, progress reports, and data-driven improvements in teaching methods.</p>
+                </div>
+            </div>
+
+            <!-- KCSE Performance Section -->
+            <div class="kcse-performance-section">
+                <div class="section-header">
+                    <h2>KCSE Performance by Year</h2>
+                    <p>Our track record of academic excellence</p>
+                </div>
+                <div class="kcse-performance-grid">
+                    <div class="kcse-year-card">
+                        <div class="kcse-year-header">
+                            <h3>2023</h3>
+                            <span class="kcse-year-badge">Latest</span>
+                        </div>
+                        <div class="kcse-stats">
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Mean Score</span>
+                                <span class="stat-value">8.2</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Students</span>
+                                <span class="stat-value">245</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A (Plain)</span>
+                                <span class="stat-value">15</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A- (Minus)</span>
+                                <span class="stat-value">28</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">B+ (Plus)</span>
+                                <span class="stat-value">45</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">University Entry</span>
+                                <span class="stat-value">78%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kcse-year-card">
+                        <div class="kcse-year-header">
+                            <h3>2022</h3>
+                        </div>
+                        <div class="kcse-stats">
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Mean Score</span>
+                                <span class="stat-value">7.9</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Students</span>
+                                <span class="stat-value">238</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A (Plain)</span>
+                                <span class="stat-value">12</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A- (Minus)</span>
+                                <span class="stat-value">25</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">B+ (Plus)</span>
+                                <span class="stat-value">42</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">University Entry</span>
+                                <span class="stat-value">75%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kcse-year-card">
+                        <div class="kcse-year-header">
+                            <h3>2021</h3>
+                        </div>
+                        <div class="kcse-stats">
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Mean Score</span>
+                                <span class="stat-value">7.6</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Students</span>
+                                <span class="stat-value">230</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A (Plain)</span>
+                                <span class="stat-value">10</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A- (Minus)</span>
+                                <span class="stat-value">22</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">B+ (Plus)</span>
+                                <span class="stat-value">38</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">University Entry</span>
+                                <span class="stat-value">72%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kcse-year-card">
+                        <div class="kcse-year-header">
+                            <h3>2020</h3>
+                        </div>
+                        <div class="kcse-stats">
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Mean Score</span>
+                                <span class="stat-value">7.4</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">Students</span>
+                                <span class="stat-value">225</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A (Plain)</span>
+                                <span class="stat-value">8</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">A- (Minus)</span>
+                                <span class="stat-value">20</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">B+ (Plus)</span>
+                                <span class="stat-value">35</span>
+                            </div>
+                            <div class="kcse-stat-item">
+                                <span class="stat-label">University Entry</span>
+                                <span class="stat-value">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>School Gallery</h2>
+                <p>Capturing moments of excellence</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=School+Building" alt="School Building">
+                    <div class="gallery-overlay">
+                        <h4>Main Building</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Library" alt="Library">
+                    <div class="gallery-overlay">
+                        <h4>Library</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Science+Lab" alt="Science Lab">
+                    <div class="gallery-overlay">
+                        <h4>Science Laboratory</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Sports+Field" alt="Sports Field">
+                    <div class="gallery-overlay">
+                        <h4>Sports Field</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Classroom" alt="Classroom">
+                    <div class="gallery-overlay">
+                        <h4>Modern Classroom</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Computer+Lab" alt="Computer Lab">
+                    <div class="gallery-overlay">
+                        <h4>Computer Laboratory</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>P.O. Box 12345, Kitoo, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+254 114417371</p>
+                            <p>+254 794113987</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>info@kitoohighschool.ac.ke</p>
+                            <p>admissions@kitoohighschool.ac.ke</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                            <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="contactSubject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kitoo High School</h3>
+                    <p>Excellence in Education Since 1985</p>
+                    <div class="social-links">
+                        <a href="mailto:info@kitoohighschool.ac.ke" aria-label="Email Kitoo High School"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#admission">Admission</a></li>
+                        <li><a href="#academics">Academics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Portals</h4>
+                    <ul>
+                        <li><a href="student-portal.html">Student Portal</a></li>
+                        <li><a href="parent-portal.html">Parent Portal</a></li>
+                        <li><a href="admin-portal.html">Admin Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#admission">Admission Application</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kitoo High School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/admission.js"></script>
+    <script src="js/api.js"></script>
+    <link rel="stylesheet" href="css/admission.css">
+</body>
+</html>

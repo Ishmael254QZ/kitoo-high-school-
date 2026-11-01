@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Portal - Kitoo High School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="portal-body">
+    <!-- Navigation -->
+    <nav class="portal-nav">
+        <div class="container">
+            <div class="portal-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Kitoo High School - Parent Portal</span>
+            </div>
+            <ul class="portal-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li>
+                    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div id="loginSection" class="login-section">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <i class="fas fa-users"></i>
+                    <h2>Parent Login</h2>
+                    <p>Enter your credentials to access your portal</p>
+                </div>
+                <form id="parentLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="parentEmail">Email Address</label>
+                        <input type="email" id="parentEmail" name="parentEmail" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="parentPassword">Password</label>
+                        <input type="password" id="parentPassword" name="parentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <div class="login-footer">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboardSection" class="dashboard-section" style="display: none;">
+        <div class="container">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h1>Welcome, <span id="parentName"></span>!</h1>
+                    <p>Parent Portal - Monitor your child's progress</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-child"></i>
+                        <div>
+                            <h3 id="childrenCount">0</h3>
+                            <p>Children</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div>
+                            <h3>KES 0</h3>
+                            <p>Outstanding</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bell"></i>
+                        <div>
+                            <h3>3</h3>
+                            <p>Notifications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Children Selection -->
+            <div class="children-selector">
+                <label>Search Child by Admission Number:</label>
+                <div class="child-search-container">
+                    <input type="text" id="childSearchInput" class="child-search-input" placeholder="Enter admission number (e.g., KHS/2024/001)">
+                    <button class="btn btn-primary" onclick="searchChild()">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div id="childInfoDisplay" class="child-info-display" style="display: none;">
+                    <div class="child-info-card">
+                        <h3 id="childName">-</h3>
+                        <div class="child-details">
+                            <p><strong>Admission Number:</strong> <span id="childAdmission">-</span></p>
+                            <p><strong>Class:</strong> <span id="childClass">-</span></p>
+                            <p><strong>Form:</strong> <span id="childForm">-</span></p>
+                            <p><strong>Stream:</strong> <span id="childStream">-</span></p>
+                            <p><strong>Date of Birth:</strong> <span id="childDob">-</span></p>
+                            <p><strong>Guardian:</strong> <span id="childGuardian">-</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Fees Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-money-bill-wave"></i> Fees & Payments</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="fees-summary">
+                            <div class="fees-total">
+                                <h2>KES 0</h2>
+                                <p>Outstanding Balance</p>
+                            </div>
+                            <div class="fees-breakdown">
+                                <div class="fees-item">
+                                    <span>Term 1 Fees (2024)</span>
+                                    <span class="text-danger">KES 0 / 60,000</span>
+                                </div>
+                                <div class="fees-item">
+                                    <span>Last Payment</span>
+                                    <span class="text-success">KES 0 - N/A</span>
+                                </div>
+                                <div class="fees-item">
+                                    <span>Next Payment Due</span>
+                                    <span>N/A</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fees-actions">
+                            <button class="btn btn-primary">Make Payment</button>
+                            <button class="btn btn-primary">Download Receipt</button>
+                        </div>
+                        <a href="#" class="view-all-link">View Full Statement <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Results Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-line"></i> Academic Performance</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="performance-overview">
+                            <div class="overall-grade">
+                                <h2>B+</h2>
+                                <p>Overall Grade</p>
+                            </div>
+                            <div class="performance-stats">
+                                <div class="stat">
+                                    <span>Class Position</span>
+                                    <strong>12 / 45</strong>
+                                </div>
+                                <div class="stat">
+                                    <span>Mean Score</span>
+                                    <strong>78%</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="results-summary">
+                            <div class="result-item">
+                                <span class="subject-name">Mathematics</span>
+                                <span class="subject-grade">A (85%)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="subject-name">English</span>
+                                <span class="subject-grade">B+ (78%)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="subject-name">Physics</span>
+                                <span class="subject-grade">A- (82%)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="subject-name">Chemistry</span>
+                                <span class="subject-grade">B+ (77%)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="subject-name">Biology</span>
+                                <span class="subject-grade">B (75%)</span>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View Full Report Card <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Attendance Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-check"></i> Attendance</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="attendance-summary">
+                            <div class="attendance-stat">
+                                <h3>95%</h3>
+                                <p>This Term</p>
+                            </div>
+                            <div class="attendance-breakdown">
+                                <div class="attendance-item">
+                                    <span>Days Present</span>
+                                    <strong>57 / 60</strong>
+                                </div>
+                                <div class="attendance-item">
+                                    <span>Days Absent</span>
+                                    <strong class="text-danger">3</strong>
+                                </div>
+                                <div class="attendance-item">
+                                    <span>Late Arrivals</span>
+                                    <strong>2</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View Attendance Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Messages Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-comments"></i> School Messages</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="messages-list">
+                            <div class="message-item unread">
+                                <div class="message-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="message-info">
+                                    <h4>Fees Reminder</h4>
+                                    <p>Reminder: Second installment of fees due on March 31, 2024</p>
+                                    <span class="message-time">1 day ago</span>
+                                </div>
+                            </div>
+                            <div class="message-item unread">
+                                <div class="message-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="message-info">
+                                    <h4>Parent-Teacher Meeting</h4>
+                                    <p>PTA meeting scheduled for April 5, 2024 at 2:00 PM</p>
+                                    <span class="message-time">3 days ago</span>
+                                </div>
+                            </div>
+                            <div class="message-item">
+                                <div class="message-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="message-info">
+                                    <h4>Sports Day</h4>
+                                    <p>Annual sports day will be held next week</p>
+                                    <span class="message-time">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View All Messages <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Timetable Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-alt"></i> Class Timetable</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="timetable-preview">
+                            <div class="timetable-day">
+                                <strong>Monday</strong>
+                                <span>Maths, English, Physics, Chemistry</span>
+                            </div>
+                            <div class="timetable-day">
+                                <strong>Tuesday</strong>
+                                <span>Biology, History, Geography, CRE</span>
+                            </div>
+                            <div class="timetable-day">
+                                <strong>Wednesday</strong>
+                                <span>Maths, Kiswahili, Physics, Biology</span>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View Full Timetable <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Download Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-download"></i> Downloads</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="download-list">
+                            <div class="download-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <div class="download-info">
+                                    <h4>Term 1 Report Card</h4>
+                                    <p>Downloaded: March 10, 2024</p>
+                                </div>
+                                <button class="btn-icon"><i class="fas fa-download"></i></button>
+                            </div>
+                            <div class="download-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <div class="download-info">
+                                    <h4>Receipt - March Payment</h4>
+                                    <p>Downloaded: March 1, 2024</p>
+                                </div>
+                                <button class="btn-icon"><i class="fas fa-download"></i></button>
+                            </div>
+                            <div class="download-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <div class="download-info">
+                                    <h4>School Calendar 2024</h4>
+                                    <p>Available for download</p>
+                                </div>
+                                <button class="btn-icon"><i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View All Downloads <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/security.js"></script>
+    <script src="js/portal.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/child-search.js"></script>
+    <script src="js/payment.js"></script>
+    <link rel="stylesheet" href="css/payment.css">
+</body>
+</html>
+

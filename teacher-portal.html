@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Portal - Kitoo High School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="portal-body">
+    <!-- Navigation -->
+    <nav class="portal-nav">
+        <div class="container">
+            <div class="portal-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Kitoo High School - Teacher Portal</span>
+            </div>
+            <ul class="portal-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li>
+                    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div id="loginSection" class="login-section">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h2>Teacher Login</h2>
+                    <p>Enter your credentials to access your portal</p>
+                </div>
+                <form id="teacherLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="teacherId">Teacher ID / Email</label>
+                        <input type="text" id="teacherId" name="teacherId" placeholder="e.g., TCH/2024/001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacherPassword">Password</label>
+                        <input type="password" id="teacherPassword" name="teacherPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboardSection" class="dashboard-section" style="display: none;">
+        <div class="container">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h1>Welcome, <span id="teacherName"></span>!</h1>
+                    <p>Teacher Portal - Manage your classes and students</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3 id="totalStudents">0</h3>
+                            <p>Total Students</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <h3 id="totalSubjects">0</h3>
+                            <p>Subjects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tasks"></i>
+                        <div>
+                            <h3 id="pendingTasks">0</h3>
+                            <p>Pending Tasks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <a href="#" class="action-card" onclick="showAddStudentInfo()">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Student Info</span>
+                    </a>
+                    <a href="#" class="action-card" onclick="showMarkAttendance()">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Mark Attendance</span>
+                    </a>
+                    <a href="#" class="action-card" onclick="showAddResults()">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>Add Exam Results</span>
+                    </a>
+                    <a href="#" class="action-card" onclick="showAssignments()">
+                        <i class="fas fa-tasks"></i>
+                        <span>Manage Assignments</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Add Student Information Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-edit"></i> Add Student Information</h3>
+                    </div>
+                    <div class="card-content">
+                        <form id="addStudentInfoForm" class="student-info-form">
+                            <div class="form-group">
+                                <label for="studentAdmission">Admission Number</label>
+                                <input type="text" id="studentAdmission" name="studentAdmission" placeholder="KHS/2024/001" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentName">Student Name</label>
+                                <input type="text" id="studentName" name="studentName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentClass">Class</label>
+                                <select id="studentClass" name="studentClass" required>
+                                    <option value="">Select Class</option>
+                                    <option value="Form 1 East">Form 1 East</option>
+                                    <option value="Form 1 West">Form 1 West</option>
+                                    <option value="Form 1 North">Form 1 North</option>
+                                    <option value="Form 1 South">Form 1 South</option>
+                                    <option value="Form 2 East">Form 2 East</option>
+                                    <option value="Form 2 West">Form 2 West</option>
+                                    <option value="Form 2 North">Form 2 North</option>
+                                    <option value="Form 2 South">Form 2 South</option>
+                                    <option value="Form 3 East">Form 3 East</option>
+                                    <option value="Form 3 West">Form 3 West</option>
+                                    <option value="Form 3 North">Form 3 North</option>
+                                    <option value="Form 3 South">Form 3 South</option>
+                                    <option value="Form 4 East">Form 4 East</option>
+                                    <option value="Form 4 West">Form 4 West</option>
+                                    <option value="Form 4 North">Form 4 North</option>
+                                    <option value="Form 4 South">Form 4 South</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentSubject">Subject</label>
+                                <input type="text" id="studentSubject" name="studentSubject" placeholder="e.g., Mathematics" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentGrade">Grade/Score</label>
+                                <input type="text" id="studentGrade" name="studentGrade" placeholder="e.g., A or 85%" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentRemarks">Remarks</label>
+                                <textarea id="studentRemarks" name="studentRemarks" rows="3" placeholder="Additional notes about the student"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-save"></i> Save Information
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- My Classes -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chalkboard"></i> My Classes</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="classes-list">
+                            <div class="class-item">
+                                <div class="class-info">
+                                    <h4>Form 3 East - Mathematics</h4>
+                                    <p>45 Students</p>
+                                </div>
+                                <button class="btn btn-primary btn-sm">View Class</button>
+                            </div>
+                            <div class="class-item">
+                                <div class="class-info">
+                                    <h4>Form 2 West - Physics</h4>
+                                    <p>42 Students</p>
+                                </div>
+                                <button class="btn btn-primary btn-sm">View Class</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-history"></i> Recent Activities</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="activities-list">
+                            <div class="activity-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div class="activity-info">
+                                    <h4>Added Results</h4>
+                                    <p>Form 3 East - Mathematics</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-user-plus text-info"></i>
+                                <div class="activity-info">
+                                    <h4>Updated Student Info</h4>
+                                    <p>KHS/2024/001 - Jane Doe</p>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/security.js"></script>
+    <script src="js/portal.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/teacher.js"></script>
+</body>
+</html>
+

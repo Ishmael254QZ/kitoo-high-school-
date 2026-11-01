@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Kitoo High School</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portal.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="portal-body">
+    <!-- Navigation -->
+    <nav class="portal-nav">
+        <div class="container">
+            <div class="portal-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Kitoo High School - Student Portal</span>
+            </div>
+            <ul class="portal-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li>
+                    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form (shown when not logged in) -->
+    <div id="loginSection" class="login-section">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <i class="fas fa-user-graduate"></i>
+                    <h2>Student Login</h2>
+                    <p>Enter your credentials to access your portal</p>
+                </div>
+                <form id="studentLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="studentId">Student ID / Admission Number</label>
+                        <input type="text" id="studentId" name="studentId" placeholder="e.g., KHS/2024/001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentPassword">Password</label>
+                        <input type="password" id="studentPassword" name="studentPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <div class="login-footer">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard (shown when logged in) -->
+    <div id="dashboardSection" class="dashboard-section" style="display: none;">
+        <div class="container">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h1>Welcome back, <span id="studentName"></span>!</h1>
+                    <p>Student ID: <span id="displayStudentId"></span> | Class: <span id="studentClass"></span></p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <h3>8</h3>
+                            <p>Subjects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tasks"></i>
+                        <div>
+                            <h3>5</h3>
+                            <p>Assignments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-book-reader"></i>
+                        <div>
+                            <h3>2</h3>
+                            <p>Library Books</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Quick Access Cards -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-calendar-alt"></i> My Timetable</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="timetable-preview">
+                            <div class="timetable-day">
+                                <strong>Monday</strong>
+                                <span>Maths, English, Physics, Chemistry</span>
+                            </div>
+                            <div class="timetable-day">
+                                <strong>Tuesday</strong>
+                                <span>Biology, History, Geography, CRE</span>
+                            </div>
+                            <div class="timetable-day">
+                                <strong>Wednesday</strong>
+                                <span>Maths, Kiswahili, Physics, Biology</span>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View Full Timetable <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-clipboard-list"></i> Assignments</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="assignment-list">
+                            <div class="assignment-item">
+                                <div class="assignment-info">
+                                    <h4>Mathematics - Algebra</h4>
+                                    <p>Due: March 15, 2024</p>
+                                </div>
+                                <span class="badge badge-warning">Pending</span>
+                            </div>
+                            <div class="assignment-item">
+                                <div class="assignment-info">
+                                    <h4>English - Essay Writing</h4>
+                                    <p>Due: March 18, 2024</p>
+                                </div>
+                                <span class="badge badge-warning">Pending</span>
+                            </div>
+                            <div class="assignment-item">
+                                <div class="assignment-info">
+                                    <h4>Physics - Project Report</h4>
+                                    <p>Due: March 20, 2024</p>
+                                </div>
+                                <span class="badge badge-warning">Pending</span>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View All Assignments <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-bar"></i> Recent Results</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="results-summary">
+                            <div class="result-item">
+                                <span class="subject-name">Mathematics</span>
+                                <span class="subject-grade">A (85%)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="subject-name">English</span>
+                                <span class="subject-grade">B+ (78%)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="subject-name">Physics</span>
+                                <span class="subject-grade">A- (82%)</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="subject-name">Chemistry</span>
+                                <span class="subject-grade">B+ (77%)</span>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View Full Results <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-book"></i> Library Books</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="library-list">
+                            <div class="library-item">
+                                <div class="library-info">
+                                    <h4>Introduction to Physics</h4>
+                                    <p>Due: March 25, 2024</p>
+                                </div>
+                                <span class="badge badge-success">Active</span>
+                            </div>
+                            <div class="library-item">
+                                <div class="library-info">
+                                    <h4>Advanced Mathematics</h4>
+                                    <p>Due: March 28, 2024</p>
+                                </div>
+                                <span class="badge badge-success">Active</span>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View All Books <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-money-bill-wave"></i> Fees Balance</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="fees-summary">
+                            <div class="fees-total">
+                                <h2>KES 0</h2>
+                                <p>Outstanding Balance</p>
+                            </div>
+                            <div class="fees-breakdown">
+                                <div class="fees-item">
+                                    <span>Term 1 Fees</span>
+                                    <span>KES 0 / 60,000</span>
+                                </div>
+                                <div class="fees-item">
+                                    <span>Other Charges</span>
+                                    <span>KES 0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View Full Statement <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-comments"></i> Messages</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="messages-list">
+                            <div class="message-item unread">
+                                <div class="message-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="message-info">
+                                    <h4>New Assignment Posted</h4>
+                                    <p>Mathematics teacher posted a new assignment</p>
+                                    <span class="message-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="message-item">
+                                <div class="message-icon">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div class="message-info">
+                                    <h4>School Notice</h4>
+                                    <p>Sports day scheduled for next week</p>
+                                    <span class="message-time">1 day ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="view-all-link">View All Messages <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/security.js"></script>
+    <script src="js/portal.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/payment.js"></script>
+    <link rel="stylesheet" href="css/payment.css">
+</body>
+</html>
+
