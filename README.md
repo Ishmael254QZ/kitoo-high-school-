@@ -2,7 +2,7 @@
 
 A complete, modern website template for Kitoo High School featuring a comprehensive School Management System (SMS) with multiple modules and portals.
 
-## 🌟 Features
+##  Features
 
 ### Public Website
 - **Home Page**: Hero section with school introduction
@@ -44,7 +44,7 @@ A complete, modern website template for Kitoo High School featuring a comprehens
 - Upcoming events
 - System alerts
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 SMS/
@@ -163,13 +163,11 @@ For production deployment:
 ## 📞 Support
 
 For questions or issues, please contact:
-- **Email**: info@kitoohighschool.ac.ke
-- **Website**: www.kitoohighschool.ac.ke
+- **Email**: ishmaelmunyalo4@gmail.com
+- **Website**: N/A 
 
 ## 📄 License
 
 This template is created for Kitoo High School. Modify as needed for your institution.
 
 ---
-
-**Built with ❤️ for Kitoo High School**
